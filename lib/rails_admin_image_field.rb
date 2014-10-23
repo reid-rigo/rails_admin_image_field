@@ -9,14 +9,12 @@ module RailsAdmin
 
           register_instance_option :pretty_value do
             if value.presence
-              bindings[:view].tag(:img, html_attributes.merge(src: value))
+              bindings[:view].image_tag(value, html_attributes)
             end
           end
 
           register_instance_option :html_attributes do
-            {
-              width: 200
-            }
+            {}
           end
 
         end
